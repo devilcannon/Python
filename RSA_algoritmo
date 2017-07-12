@@ -1,0 +1,19 @@
+#Ejemplo de algoritmo RSA
+p = 5  #Primo 1 aleatorio
+q = 11 #Primo 2 aleatorio
+n = p*q #Producto N
+f = (p-1)*(q-1) #Funicon de euler
+e = 7 #Entero positivo coprimo menor f
+d = 1#Calculamos d
+while(d*e%f !=1):
+    d = d+1
+
+print("Llave publica(",n,", ",e,")")
+print("Llave privada(",n,", ",d,")")
+### Cifrado ###
+m = 2#Mensaje a cifrar
+print("Crifar mensaje: ",m)
+c = m**e%n
+print("Mensaje cifrado: ",c)
+### Descifrado ###
+print("Descifrado ",c**d%n)
